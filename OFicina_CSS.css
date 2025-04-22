@@ -1,0 +1,549 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Estilização da primeira section */
+#primeira-box {
+  background-image: url('/Wordpress/trabalhador-de-servico-de-carro-muscular-reparando-o-veiculo_146671-19605.jpg'); /* Atualize com o caminho correto da imagem */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.primeira-box-video {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 90%;
+}
+
+.primeira-box-video h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.primeira-box-video .destaque {
+  color: #2db2ff;
+}
+
+/* Estilização da área do vídeo */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 25px;
+  padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-thumbnail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 48px;
+  border-radius: 50%;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Estilização do botão de CTA */
+.cta-button {
+  display: inline-block;
+  background-color: #2db2ff;
+  color: white;
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+.cta-button:hover {
+  background-color: #000000;     /* muda a cor do botão */
+  color: #ffffff;                /* muda a cor da fonte */
+  transform: scale(1.50);        /* faz crescer suavemente */
+}
+
+
+
+/* Animação de fade in de baixo pra cima */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.primeira-box-video {
+  /* ... estilos já existentes ... */
+  animation: fadeInUp 1.2s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+
+#porque-escolher {
+  background-color: #0b1a3c; /* azul escuro */
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.container-beneficios {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#porque-escolher h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: white;
+}
+
+#porque-escolher .destaque {
+  color: #2db2ff;
+}
+
+.beneficios-lista {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.beneficios-lista li {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: #bcd2f5;
+}
+
+.beneficios-lista .icone {
+  font-size: 1.4rem;
+  margin-right: 12px;
+  color: #2db2ff;
+}
+
+#porque-escolher .cta-button {
+  background-color: #2db2ff;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#porque-escolher .cta-button:hover {
+  background-color: white;
+  color: #2db2ff;
+  transform: scale(1.05);
+}
+
+#o-que-aprendera {
+  background-color: #062e6f;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.container-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#o-que-aprendera h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #2db2ff;
+}
+
+.destaque {
+  color: #2db2ff;
+}
+
+.carrossel-fixo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-container {
+  width: 300px;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #0b1a3c;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 0;
+}
+
+.card.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.card img {
+  width: 90%;
+  border-radius: 10%;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #a8c9ee;
+}
+
+.seta {
+  background-color: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  margin: 0 10px;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.seta:hover {
+  background-color: rgba(255,255,255,0.25);
+}
+
+#professor {
+  background-image: url('/Wordpress/professor.jpg'); /* atualize o caminho se necessário */
+  background-size: cover;
+  background-position: 0px  40px 0px 80 px; /* <<< este é o ajuste principal */
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  position: relative;
+  color: #000;
+}
+
+.professor-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  max-width: 700px;
+  border-radius: 16px 0 0 16px;
+  margin-left: 5%;
+}
+
+.professor-texto h2 {
+  font-size: 2. rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.professor-texto p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+@media (max-width: 768px) {
+  .professor-overlay {
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+}
+
+
+#preco {
+  background-color: #062e6f;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.container-preco {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#preco h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#preco .descricao {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #c6d4ee;
+}
+
+.destaque {
+  color: #2db2ff;
+}
+
+.preco-box {
+  margin-bottom: 30px;
+}
+
+.preco-antigo {
+  font-size: 1.2rem;
+  color: #9baecf;
+  text-decoration: line-through;
+  margin-bottom: 10px;
+}
+
+.preco-destaque {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.preco-avista {
+  font-size: 1.1rem;
+  color: #c6d4ee;
+  margin-top: 10px;
+}
+
+.urgente {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #64c5ff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Botão de compra */
+#preco .cta-button {
+  background-color: #2db2ff;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#preco .cta-button:hover {
+  background-color: white;
+  color: #2db2ff;
+  transform: scale(1.05);
+}
+
+/* Efeito de pulso */
+.pulsando {
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255,255,255,0);
+  }
+  50% {
+    transform: scale(1.06);
+    text-shadow: 0 0 12px rgba(255,255,255,0.6);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(255,255,255,0);
+  }
+}
+
+#depoimentos-slider {
+  padding: 60px 20px;
+  background-color: #0b1a3c;
+  text-align: center;
+  color: white;
+}
+
+#depoimentos-slider h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: black;
+}
+
+.video-thumbnail {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.depoimento-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,0.6);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 12px 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.info-depoimento {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #c6d4ee;
+}
+
+/* Envolvendo o Swiper */
+.depoimento-swiper {
+  max-width: 600px; /* Altere esse valor se quiser mais estreito ou mais largo */
+  margin: 0 auto;
+}
+
+/* Slide individual */
+.swiper-slide {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+/* Tamanho da área do vídeo */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Proporção 16:9 */
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: black;
+}
+
+/* Texto abaixo do vídeo */
+.info-depoimento {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #c6d4ee;
+  padding: 0 10px;
+}
+
+
+/* Seção principal */
+#fale-conosco {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#fale-conosco h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #062e6f;
+}
+
+#fale-conosco h2 {
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+  color: #2db2ff;
+}
+
+/* WhatsApp */
+.whats-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whats-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+}
+
+.whats-button {
+  background-color: #25D366;
+  color: white;
+  padding: 16px 28px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.whats-button:hover {
+  background-color: #1ebe5c;
+}
+
+/* Rodapé */
+.rodape {
+  background-color: #000;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.logo-footer {
+  max-width: 200px;
+  height: auto;
+}
